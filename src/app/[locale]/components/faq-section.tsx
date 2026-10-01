@@ -11,17 +11,6 @@ import gridBg from "@/assets/images/bg-grid.png";
 
 const COUNT = 5;
 
-/**
- * FaqSection — "سوالات متداول مهمانان گیلمار"
- *
- * Right (RTL start): badge (Icon Container 9), title, subtitle, bare
- * camera visual in a 620×576 box (no card, no shadow).
- *
- * Left (RTL end): accordion list, 620px wide. Active card: 20px radius,
- * 16px side / 24px vertical padding, 16px question↔answer gap,
- * #FCFDFD surface, 1px #EEF3F6 border, 6px white ring + soft drop shadow.
- * Collapsed rows: 64px pills (8000px radius), 16px padding, same border.
- */
 export function FaqSection() {
   const t = useTranslations("Faq");
   const locale = useLocale();

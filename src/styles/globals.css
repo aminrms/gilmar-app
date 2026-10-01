@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "./fontiran.css";
+@import "./font.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -78,6 +78,7 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.696 0.17 162.48);
 }
+
 
 @theme inline {
   --color-background: var(--background);

@@ -25,8 +25,6 @@ const REVIEWER_IMAGES = [
 
 const COUNT = 5;
 
-/* Orbit spots for the small avatars around the central card (Figma layout).
- * Percentages are relative to the stage container. */
 const ORBIT_SPOTS = [
   { top: "12%", left: "18%", size: 40 }, // top-left
   { top: "38%", left: "8%", size: 32 }, // mid-left upper

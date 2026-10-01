@@ -1,5 +1,3 @@
-import { setRequestLocale } from "next-intl/server";
-
 import { HeroSection } from "./components/hero-section";
 import { IntroSection } from "./components/intro-section";
 import { PackagesSection } from "./components/packages-section";
@@ -16,8 +14,6 @@ export default async function Page({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
-  setRequestLocale(locale);
 
   return (
     <main className="flex flex-col gap-[140px]">

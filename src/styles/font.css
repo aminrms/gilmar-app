@@ -1,0 +1,133 @@
+/* =========================================================
+   Abar Low FaNum
+   ========================================================= */
+
+@font-face {
+  font-family: "AbarLowFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarLowFaNum-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AbarLowFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarLowFaNum-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AbarLowFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarLowFaNum-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AbarLowFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarLowFaNum-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AbarLowFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarLowFaNum-Black.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+
+/* =========================================================
+   Abar Mid FaNum
+   ========================================================= */
+
+@font-face {
+  font-family: "AbarMidFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarMidFaNum-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AbarMidFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarMidFaNum-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AbarMidFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarMidFaNum-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AbarMidFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarMidFaNum-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AbarMidFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarMidFaNum-Black.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+
+/* =========================================================
+   Abar High FaNum
+   ========================================================= */
+
+@font-face {
+  font-family: "AbarHighFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarHighFaNum-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AbarHighFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarHighFaNum-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AbarHighFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarHighFaNum-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AbarHighFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarHighFaNum-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AbarHighFaNum";
+  src: url("../assets/fonts/Webfonts/woff2/AbarHighFaNum-Black.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
