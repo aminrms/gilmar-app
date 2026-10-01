@@ -1,0 +1,550 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./fontiran.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.625rem;
+
+  /* ——— shadcn tokens (light): neutral surfaces + emerald brand ——— */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.596 0.145 163.225); /* emerald-600 #059669 */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.979 0.021 166.113); /* emerald-50 tint */
+  --accent-foreground: oklch(0.262 0.051 172.552); /* emerald-950 */
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.596 0.145 163.225);
+
+  --chart-1: oklch(0.596 0.145 163.225);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.596 0.145 163.225);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.979 0.021 166.113);
+  --sidebar-accent-foreground: oklch(0.262 0.051 172.552);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.596 0.145 163.225);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.696 0.17 162.48); /* emerald-500 */
+  --primary-foreground: oklch(0.137 0.036 171.973); /* emerald-950 */
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.696 0.17 162.48);
+
+  --chart-1: oklch(0.696 0.17 162.48);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.696 0.17 162.48);
+  --sidebar-primary-foreground: oklch(0.137 0.036 171.973);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.696 0.17 162.48);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@theme {
+  --breakpoint-3xl: 1920px;
+  /* ——— Brand palette ——— */
+  --color-brand-sky: #02adf7;
+  --color-brand-green: #26e05a;
+  --color-brand-teal: #1aa3b2;
+  --color-header-surface: #fcfdfd;
+  --color-header-border: #eef3f6;
+  --color-ink: #1a1a1a;
+  --color-icon-tint: #f7f8f8;
+  --color-steel-mist: #bac8d1;
+  --color-glow-blue: #c5d8ff;
+
+  /* ——— Hero / root page backgrounds ——— */
+  --background-hero-radial: radial-gradient(
+    ellipse at top,
+    oklch(0.95 0.03 230) 0%,
+    oklch(0.98 0.01 230) 50%,
+    oklch(1 0 0) 100%
+  );
+  --background-brand-gradient: linear-gradient(
+    135deg,
+    oklch(0.65 0.16 165) 0%,
+    oklch(0.72 0.14 200) 100%
+  );
+
+  /*
+   * Aliases into Tailwind's `--background-image-*` namespace so the tokens
+   * above generate `bg-hero-radial` / `bg-brand-gradient` utilities.
+   */
+  --background-image-hero-radial: var(--background-hero-radial);
+  --background-image-brand-gradient: var(--background-brand-gradient);
+
+  /* ——— Font families: all Abar variants available globally ——— */
+  --font-sans: "AbarMidFaNum", "AbarLowFaNum", "AbarHighFaNum",
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+  --font-abar-low: "AbarLowFaNum", ui-sans-serif, system-ui, sans-serif;
+  --font-abar-mid: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+  --font-abar-high: "AbarHighFaNum", ui-sans-serif, system-ui, sans-serif;
+
+  /* ——— Base type scale (overrides Tailwind defaults) ——— */
+  --text-xs: 0.75rem; /* 12px */
+  --text-xs--line-height: 1.3125rem; /* 21px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-sm--line-height: 1.5rem; /* 24px */
+  --text-base: 1rem; /* 16px */
+  --text-base--line-height: 1.75rem; /* 28px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-lg--line-height: 1.75rem; /* 28px */
+  --text-xl: 1.375rem; /* 22px */
+  --text-xl--line-height: 2rem; /* 32px */
+  --text-2xl: 1.625rem; /* 26px */
+  --text-2xl--line-height: 2.25rem; /* 36px */
+  --text-3xl: 2rem; /* 32px */
+  --text-3xl--line-height: 2.75rem; /* 44px */
+  --text-4xl: 2.5rem; /* 40px */
+  --text-4xl--line-height: 3.25rem; /* 52px */
+
+  /* ——— Semantic display / heading / body tokens ——— */
+  --text-display: 2.5rem; /* 40px */
+  --text-display--line-height: 3.25rem; /* 52px */
+  --text-h1: 2rem; /* 32px */
+  --text-h1--line-height: 2.75rem; /* 44px */
+  --text-h2: 1.625rem; /* 26px */
+  --text-h2--line-height: 2.25rem; /* 36px */
+  --text-h3: 1.375rem; /* 22px */
+  --text-h3--line-height: 2rem; /* 32px */
+  --text-h4: 1.125rem; /* 18px */
+  --text-h4--line-height: 1.75rem; /* 28px */
+  --text-body-lg: 1rem; /* 16px */
+  --text-body-lg--line-height: 1.75rem; /* 28px */
+  --text-body: 0.875rem; /* 14px */
+  --text-body--line-height: 1.5625rem; /* 25px */
+  --text-body-sm: 0.75rem; /* 12px */
+  --text-body-sm--line-height: 1.3125rem; /* 21px */
+  --text-button: 0.875rem; /* 14px */
+  --text-button--line-height: 1.25rem; /* 20px */
+  --text-caption: 0.6875rem; /* 11px */
+  --text-caption--line-height: 1.125rem; /* 18px */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    letter-spacing: 0; /* Persian script must not be letter-spaced */
+  }
+}
+
+@layer components {
+  /*
+   * Brand gradient button surface.
+   * Colors come from the palette tokens above (--color-brand-sky /
+   * --color-brand-green); the white top-gloss is layered above the base
+   * linear gradient so the highlight stays visible.
+   */
+  .btn-brand-gradient {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 14px;
+    leading-trim: none;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    background:
+      radial-gradient(
+        27.92% 100% at 50% 0%,
+        rgb(255 255 255 / 24%) 0%,
+        rgb(255 255 255 / 0%) 100%
+      ),
+      radial-gradient(
+        27.92% 100% at 50% 0%,
+        rgb(255 255 255 / 24%) 0%,
+        rgb(255 255 255 / 0%) 100%
+      ),
+      linear-gradient(
+        229.52deg,
+        var(--color-brand-sky) -18.98%,
+        var(--color-brand-green) 121.29%
+      );
+  }
+
+  /* Header nav item type style: Abar Mid FaNum SemiBold 14/32, centered */
+  .nav-item {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  /*
+   * Guest CTA shadows: inner top highlight + soft drop shadow.
+   * Layered on top of `.btn-brand-gradient` (same elements).
+   */
+  .btn-guest {
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 16%),
+      0 1px 2px -1px rgb(146 146 146 / 40%);
+  }
+
+  /*
+   * Guest CTA icon ring — 40px circle with gradient border
+   * (white → steel-mist) and inner steel-mist shadow.
+   */
+  .guest-icon-ring {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    border: 1.2px solid transparent;
+    background:
+      linear-gradient(var(--color-icon-tint), var(--color-icon-tint))
+        padding-box,
+      linear-gradient(161.17deg, #fff 12.7%, var(--color-steel-mist) 91.04%)
+        border-box;
+    box-shadow: inset -4px -4px 6px 0
+      color-mix(in srgb, var(--color-steel-mist) 30%, transparent);
+  }
+
+  /*
+   * Icon-pack badge — teal gradient circle behind white badge glyphs
+   * (floating pills in Frame 889 / 891). Glyph PNGs with transparency
+   * punch through, so force them to render white via a brightness-0
+   * invert filter when placed inside.
+   */
+  .icon-badge {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    color: #fff;
+    background: linear-gradient(
+      229.52deg,
+      var(--color-brand-sky) -18.98%,
+      var(--color-brand-green) 121.29%
+    );
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 16%),
+      0 1px 2px -1px rgb(146 146 146 / 40%);
+  }
+  .icon-badge img {
+    filter: brightness(0) invert(1);
+  }
+
+  /*
+   * Intro guest-button arrow — 34px circle per spec:
+   * 1.2px white → steel-mist gradient border, inner steel-mist shadow,
+   * soft drop shadow.
+   */
+  .arrow-icon-ring {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 9999px;
+    border: 1.2px solid transparent;
+    color: var(--primary);
+    background:
+      linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(161.17deg, #fff 12.7%, var(--color-steel-mist) 91.04%)
+        border-box;
+    box-shadow:
+      inset -4px -4px 6px 0
+        color-mix(in srgb, var(--color-steel-mist) 30%, transparent),
+      0 4px 6px 0 rgb(0 0 0 / 30%);
+  }
+
+  /* Intro title: Abar Mid FaNum ExtraBold 32/100%, ls -1.4, right, #1A1A1A */
+  .intro-title {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -1.4px;
+    text-align: right;
+    vertical-align: middle;
+    color: #1a1a1a;
+  }
+
+  /* Intro body: Abar Mid FaNum SemiBold 14/32, justify, #4C4C4D */
+  .intro-body {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: justify;
+    vertical-align: middle;
+    color: #4c4c4d;
+  }
+
+  /* Rules title: Abar Mid FaNum ExtraBold 32/100%, ls -1.4, center, #1A1A1A */
+  .rules-title {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -1.4px;
+    text-align: center;
+    vertical-align: middle;
+    color: #1a1a1a;
+  }
+
+  /* Rules subtitle: Abar Mid FaNum SemiBold 14/32, center, #4C4C4D */
+  .rules-subtitle {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+    color: #4c4c4d;
+  }
+
+  /* Rules item title: Abar Mid FaNum ExtraBold 16/32, center, #1A1A1A */
+  .rules-item-title {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+    color: #1a1a1a;
+  }
+
+  /* Rules item text: Abar Mid FaNum SemiBold 14/32, center, #4C4C4D */
+  .rules-item-text {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+    color: #4c4c4d;
+  }
+
+  /* Amenities title: Abar Mid FaNum ExtraBold 32/100%, ls -1.4, right, #1A1A1A */
+  .amenities-title {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -1.4px;
+    text-align: right;
+    vertical-align: middle;
+    color: #1a1a1a;
+  }
+
+  /* Amenities body: Abar Mid FaNum SemiBold 14/32, right, #4C4C4D */
+  .amenities-body {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: right;
+    vertical-align: middle;
+    color: #4c4c4d;
+  }
+
+  /* Amenities slide label: absolute overlay, Abar Mid FaNum ExtraBold 16/100%, right, #FFFFFF */
+  .amenities-label {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: right;
+    vertical-align: middle;
+    color: #fff;
+  }
+
+  /* Rooms card label: Abar Mid FaNum ExtraBold 16/32, right, #FFFFFF */
+  .rooms-label {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: right;
+    vertical-align: middle;
+    color: #ffffff;
+  }
+
+  /* Rooms card sublabel: Abar Mid FaNum SemiBold 14/32, right, #FFFFFFCC */
+  .rooms-sublabel {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: right;
+    vertical-align: middle;
+    color: #ffffffcc;
+  }
+
+  /* Testimonials quote: Abar Mid FaNum SemiBold 14/32, center, #1A1A1A */
+  .testimonials-quote {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+    color: #1a1a1a;
+  }
+
+  /* Testimonials name: Abar Mid FaNum ExtraBold 14/32, center, #1A1A1A */
+  .testimonials-name {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+    color: #1a1a1a;
+  }
+
+  /* Testimonials role: Abar Mid FaNum SemiBold 14/32, center, #4C4C4D */
+  .testimonials-role {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+    color: #4c4c4d;
+  }
+
+  /* FAQ question: Abar Mid FaNum ExtraBold 14/32, center, #1A1A1A */
+  .faq-question {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+    color: #1a1a1a;
+  }
+
+  /* FAQ answer: Abar Mid FaNum SemiBold 14/32, right, #4C4C4D */
+  .faq-answer {
+    font-family: "AbarMidFaNum", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: right;
+    vertical-align: middle;
+    color: #4c4c4d;
+  }
+}
