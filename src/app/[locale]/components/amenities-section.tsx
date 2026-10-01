@@ -54,20 +54,20 @@ export function AmenitiesSection() {
   return (
     <section
       aria-labelledby="amenities-title"
-      className="relative w-full overflow-clip bg-[#FAFCFC]"
+      className="relative w-full overflow-clip"
       dir={isRtl ? "rtl" : "ltr"}
     >
       {/* Background blueprint grid */}
-      {/* <div
+      <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{
           backgroundImage: `url(${gridBg.src})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: isRtl ? "right 10% center" : "left 10% center",
-          backgroundSize: "750px auto",
+          backgroundSize: "1000ox auto",
         }}
-      /> */}
+      />
 
 
       <div className="relative flex flex-col justify-center gap-8 px-6 py-10 sm:px-10 lg:flex-row lg:items-center lg:gap-10 lg:py-14 lg:pe-0 lg:ps-[max(2rem,calc((100vw-80rem)/2+2rem))]">

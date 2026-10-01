@@ -47,18 +47,12 @@ const EXPLORE_LINKS = [
 ] as const;
 
 const SOCIALS = [
-  { key: "x", label: "X", Icon: XIcon },
-  { key: "youtube", label: "YouTube", Icon: YoutubeIcon },
-  { key: "telegram", label: "Telegram", Icon: TelegramIcon },
   { key: "linkedin", label: "LinkedIn", Icon: LinkedinIcon },
+  { key: "telegram", label: "Telegram", Icon: TelegramIcon },
+  { key: "youtube", label: "YouTube", Icon: YoutubeIcon },
+  { key: "x", label: "X", Icon: XIcon },
 ] as const;
 
-/**
- * SiteFooter — Figma spec:
- * main card 1280×276, r20, 1px border, pe 24px, #FCFDFD, ring 6px white.
- * bottom bar 1280×56, pill, space-between, padding 8/24, #FCFDFD,
- * 1px #EEF3F6, ring 6px white.
- */
 const SOCIAL_BG =
   "linear-gradient(229.52deg, #02ADF7 -18.98%, #26E05A 121.29%), radial-gradient(27.92% 100% at 50% 0%, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(27.92% 100% at 50% 0%, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 100%)";
 
@@ -69,127 +63,130 @@ export function SiteFooter() {
 
   return (
     <div className="relative -mt-6 overflow-hidden md:-mt-10">
-      {/* Bottom-right wash — Figma: 640×640 @ top 720 / left 940, blur 420 */}
+      {/* Soft radial fade glow wash (#C5D8FF) — pushed far bottom-right with maximum fade */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 mx-auto w-[min(14490px,100%)]"
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
       >
         <div
-          className="absolute right-[-200px] bottom-[-320px] size-[640px] rounded-full bg-glow-blue opacity-50 blur-[420px]"
-          style={{ backdropFilter: "blur(420px)" }}
+          className="absolute -right-60 -bottom-80 h-[850px] w-[850px] rounded-full blur-[180px] sm:-right-72 sm:-bottom-96 sm:h-[1050px] sm:w-[1050px] sm:blur-[220px]"
+          style={{
+            background:
+              "radial-gradient(circle at 50% 50%, rgba(197, 216, 255, 0.75) 0%, rgba(197, 216, 255, 0.4) 35%, rgba(197, 216, 255, 0.12) 60%, rgba(197, 216, 255, 0) 80%)",
+          }}
         />
       </div>
 
       <footer
         dir={dir}
-        className="relative mx-auto max-w-[1430px] w-full pb-6"
+        className="relative z-10 mx-auto max-w-[1430px] w-full pb-6"
       >
-      {/* ——— Main card: 1280×276 — map flush full-height, no padding ——— */}
-      <div className="overflow-hidden rounded-[20px] border border-[#EEF3F6] bg-[#FCFDFD] shadow-[0px_0px_0px_6px_#FFFFFF]">
-        <div className="flex flex-col lg:h-[276px] lg:flex-row">
-          {/* Padded content (start in RTL = right) */}
-          <div className="grid flex-1 gap-8 p-6 md:p-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.7fr)_minmax(0,1.05fr)] lg:items-start">
-          {/* About (start in RTL = right) */}
-          <div className="flex flex-col items-start text-start">
-            <Image
-              src={logo}
-              alt={t("logoAlt")}
-              width={180}
-              height={56}
-              className="h-auto w-[180px] object-contain"
-            />
-            <p className="intro-body mt-4 !text-justify">{t("about")}</p>
-          </div>
+        {/* ——— Main card: 1280×276 — map flush full-height, no padding ——— */}
+        <div className="overflow-hidden rounded-[20px] border border-[#EEF3F6] bg-[#FCFDFD] shadow-[0px_0px_0px_6px_#FFFFFF]">
+          <div className="flex flex-col lg:h-[276px] lg:flex-row">
+            {/* Padded content */}
+            <div className="grid flex-1 gap-8 p-6 md:p-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.7fr)_minmax(0,1.05fr)] lg:items-start">
+              {/* About */}
+              <div className="flex flex-col items-start text-start">
+                <Image
+                  src={logo}
+                  alt={t("logoAlt")}
+                  width={180}
+                  height={56}
+                  className="h-auto w-[180px] object-contain"
+                />
+                <p className="intro-body mt-4 !text-justify">{t("about")}</p>
+              </div>
 
-          {/* Explore */}
-          <nav aria-label={t("exploreTitle")}>
-            <h3 className="rules-item-title !text-start">{t("exploreTitle")}</h3>
-            <ul className="mt-4 flex flex-col gap-2">
-              {EXPLORE_LINKS.map((item) => (
-                <li key={item.key}>
-                  <Link
-                    href={item.href}
-                    className="intro-body flex items-center gap-2 !leading-8 transition-colors hover:text-brand-teal"
-                  >
-                    <span
-                      aria-hidden
-                      className="size-1.5 shrink-0 rounded-full bg-current"
-                    />
-                    {t(`explore.${item.key}`)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+              {/* Explore */}
+              <nav aria-label={t("exploreTitle")}>
+                <h3 className="rules-item-title !text-start">{t("exploreTitle")}</h3>
+                <ul className="mt-4 flex flex-col gap-2">
+                  {EXPLORE_LINKS.map((item) => (
+                    <li key={item.key}>
+                      <Link
+                        href={item.href}
+                        className="intro-body flex items-center gap-2 !leading-8 transition-colors hover:text-brand-teal"
+                      >
+                        <span
+                          aria-hidden
+                          className="size-1.5 shrink-0 rounded-full bg-current"
+                        />
+                        {t(`explore.${item.key}`)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
 
-          {/* Contact */}
-          <div>
-            <h3 className="rules-item-title !text-start">
-              {t("contactTitle")}
-            </h3>
-            <ul className="intro-body mt-4 flex flex-col gap-2 !leading-8">
-              <li>
-                <span className="font-extrabold text-ink">
-                  {t("phoneLabel")}:
-                </span>{" "}
-                <span dir="ltr">۰۱۳۳۴۴۲۷۵۴۰ - ۰۱۳۳۴۴۲۷۵۴۱</span>
-              </li>
-              <li>
-                <span className="font-extrabold text-ink">
-                  {t("emailLabel")}:
-                </span>{" "}
-                <a
-                  href="mailto:Info@Gilmar-Gilan.Com"
-                  dir="ltr"
-                  className="transition-colors hover:text-brand-teal"
-                >
-                  Info@Gilmar-Gilan.Com
-                </a>
-              </li>
-              <li>
-                <span className="font-extrabold text-ink">
-                  {t("addressLabel")}:
-                </span>{" "}
-                {t("address")}
-              </li>
-            </ul>
-          </div>
-          </div>
+              {/* Contact */}
+              <div>
+                <h3 className="rules-item-title !text-start">
+                  {t("contactTitle")}
+                </h3>
+                <ul className="intro-body mt-4 flex flex-col gap-2 !leading-8">
+                  <li>
+                    <span className="font-extrabold text-ink">
+                      {t("phoneLabel")}:
+                    </span>{" "}
+                    <span dir="ltr">۰۱۳۳۴۴۲۷۵۴۰ - ۰۱۳۳۴۴۲۷۵۴۱</span>
+                  </li>
+                  <li>
+                    <span className="font-extrabold text-ink">
+                      {t("emailLabel")}:
+                    </span>{" "}
+                    <a
+                      href="mailto:Info@Gilmar-Gilan.Com"
+                      dir="ltr"
+                      className="transition-colors hover:text-brand-teal"
+                    >
+                      Info@Gilmar-Gilan.Com
+                    </a>
+                  </li>
+                  <li>
+                    <span className="font-extrabold text-ink">
+                      {t("addressLabel")}:
+                    </span>{" "}
+                    {t("address")}
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-          {/* Map (end in RTL = left) — flush, full card height */}
-          <div className="relative min-h-[220px] w-full overflow-hidden lg:h-full lg:min-h-0 lg:w-[300px] lg:shrink-0">
-            <Image
-              src={mapImage}
-              alt={t("mapAlt")}
-              fill
-              sizes="(min-width: 1024px) 300px, 100vw"
-              className="object-cover"
-              priority={false}
-            />
+            {/* Map — flush, full card height */}
+            <div className="relative min-h-[220px] w-full overflow-hidden lg:h-full lg:min-h-0 lg:w-[300px] lg:shrink-0">
+              <Image
+                src={mapImage}
+                alt={t("mapAlt")}
+                fill
+                sizes="(min-width: 1024px) 300px, 100vw"
+                className="object-cover"
+                priority={false}
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ——— Bottom bar: 1280×56 pill — copyright right, socials left ——— */}
-      <div className="mt-3 flex h-[56px] items-center justify-between gap-4 rounded-[80000000px] border border-[#EEF3F6] bg-[#FCFDFD] px-6 py-2 shadow-[0px_0px_0px_6px_#FFFFFF]">
-        <p className="intro-body flex-1 text-start !text-[12px] !leading-6">
-          © {t("copyright")}
-        </p>
-        <ul className="flex items-center gap-2.5" aria-label={t("socialsLabel")}>
-          {SOCIALS.map(({ key, label, Icon }) => (
-            <li key={key}>
-              <a
-                href="#"
-                aria-label={label}
-                style={{ background: SOCIAL_BG }}
-                className="grid size-10 shrink-0 place-items-center rounded-[80000000px] text-white shadow-[inset_0_1px_0_0_rgb(255_255_255/16%),0_1px_2px_-1px_rgb(146_146_146/40%)] transition-transform hover:scale-105"
-              >
-                <Icon className="size-5" />
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+        {/* ——— Bottom bar: 1280×56 pill — copyright right, socials left ——— */}
+        <div className="mt-5 flex h-[56px] items-center justify-between gap-4 rounded-[80000000px] border border-[#EEF3F6] bg-[#FCFDFD] px-6 py-2 shadow-[0px_0px_0px_6px_#FFFFFF]">
+          <p className="intro-body flex-1 text-start !text-[12px] !leading-6">
+            © {t("copyright")}
+          </p>
+          <ul className="flex items-center gap-2.5" aria-label={t("socialsLabel")}>
+            {SOCIALS.map(({ key, label, Icon }) => (
+              <li key={key}>
+                <a
+                  href="#"
+                  aria-label={label}
+                  style={{ background: SOCIAL_BG }}
+                  className="grid size-10 shrink-0 place-items-center rounded-[80000000px] text-white shadow-[inset_0_1px_0_0_rgb(255_255_255/16%),0_1px_2px_-1px_rgb(146_146_146/40%)] transition-transform hover:scale-105"
+                >
+                  <Icon className="size-5" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </footer>
     </div>
   );

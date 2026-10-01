@@ -71,11 +71,10 @@ export function PackagesSection() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "right top",
           backgroundSize: "55% auto",
-          opacity: 0.5,
         }}
       />
 
-      <div className="relative mx-auto grid w-[85%] items-center gap-10 py-10 md:py-10 lg:gap-12 xl:h-[815px] xl:grid-cols-[minmax(0,1.35fr)_minmax(0,0.85fr)] xl:gap-16 xl:py-0 2xl:gap-20">
+      <div className="relative mx-auto grid w-[100%] max-w-[1430px] items-center gap-10 py-10 md:py-10 lg:gap-12 xl:h-[815px] xl:grid-cols-[minmax(0,1.35fr)_minmax(0,0.85fr)] xl:gap-16 xl:py-0 2xl:gap-20">
         {/* ——— Text side (start in RTL = right) ——— */}
         <div className="flex flex-col items-start text-start xl:ps-[40px] 2xl:ps-[72px]">
           <span className="inline-flex items-center rounded-full bg-emerald-50 px-4 py-2">
@@ -102,43 +101,45 @@ export function PackagesSection() {
             </p>
           </div>
 
-          {/* 4 feature cards — 116×116, radius 12, gap 52 (compact below xl) */}
-          <ul className="mt-4 flex w-full flex-wrap gap-5 xl:gap-[52px]">
-            {[0, 1, 2, 3].map((i) => (
-              <li
-                key={i}
-                className="flex h-[100px] w-[100px] flex-col items-center justify-center gap-2 rounded-[12px] border border-header-border bg-header-surface p-4 shadow-[0px_0px_0px_6px_#FFFFFF,0px_24px_48px_0px_#002E251F] xl:h-[116px] xl:w-[116px]"
-              >
-                <Image
-                  src={FEATURES[i]}
-                  alt={t(`features.${i}.alt`)}
-                  width={44}
-                  height={44}
-                  className="size-9 object-contain xl:size-11"
-                />
-                <span className="text-center text-xs leading-5 font-bold text-ink">
-                  {t(`features.${i}.label`)}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <div className="flex flex-col items-center">
+            {/* 4 feature cards — 116×116, radius 12, gap 52 (compact below xl) */}
+            <ul className="mt-4 flex w-full flex-wrap gap-5 xl:gap-[52px]">
+              {[0, 1, 2, 3].map((i) => (
+                <li
+                  key={i}
+                  className="flex h-[100px] w-[100px] flex-col items-center justify-center gap-2 rounded-[12px] border border-header-border bg-header-surface p-4 shadow-[0px_0px_0px_6px_#FFFFFF,0px_24px_48px_0px_#002E251F] xl:h-[116px] xl:w-[116px]"
+                >
+                  <Image
+                    src={FEATURES[i]}
+                    alt={t(`features.${i}.alt`)}
+                    width={44}
+                    height={44}
+                    className="size-9 object-contain xl:size-11"
+                  />
+                  <span className="text-center text-xs leading-5 font-bold text-ink">
+                    {t(`features.${i}.label`)}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-          {/* Price + CTA */}
-          <div className="mt-6 flex w-full flex-wrap items-center justify-between gap-4">
-            <p className="text-sm font-extrabold text-emerald-600">
-              {t("priceLabel")}: {t("price")}
-            </p>
-            <GradientButton
-              asChild
-              className="btn-guest h-[48px] w-auto min-w-[196px] items-center justify-between gap-3 rounded-full pe-2 ps-6 whitespace-nowrap"
-            >
-              <Link href="/booking">
-                <span className="text-sm leading-none font-extrabold">
-                  {t("cta")}
-                </span>
-                <ArrowCircle dir={dir} label={t("cta")} />
-              </Link>
-            </GradientButton>
+            {/* Price + CTA */}
+            <div className="mt-6 flex w-full flex-wrap items-center justify-between gap-4">
+              <p className="text-sm font-extrabold text-emerald-600">
+                {t("priceLabel")}: {t("price")}
+              </p>
+              <GradientButton
+                asChild
+                className="btn-guest h-[48px] w-auto min-w-[196px] items-center justify-between gap-3 rounded-full pe-2 ps-6 whitespace-nowrap"
+              >
+                <Link href="/booking">
+                  <span className="text-sm leading-none font-extrabold">
+                    {t("cta")}
+                  </span>
+                  <ArrowCircle dir={dir} label={t("cta")} />
+                </Link>
+              </GradientButton>
+            </div>
           </div>
         </div>
 
@@ -166,9 +167,8 @@ export function PackagesSection() {
                   fill
                   sizes="(min-width: 1280px) 500px, (min-width: 1024px) 440px, 90vw"
                   priority={i === 0}
-                  className={`object-cover transition-opacity duration-700 ${
-                    i === active ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`object-cover transition-opacity duration-700 ${i === active ? "opacity-100" : "opacity-0"
+                    }`}
                 />
               ))}
               {/* Bottom scrim for dots legibility */}
@@ -196,11 +196,10 @@ export function PackagesSection() {
                   type="button"
                   onClick={() => goTo(i)}
                   aria-label={t("goToSlide", { index: i + 1 })}
-                  className={`h-[4px] rounded-full transition-all ${
-                    i === active
+                  className={`h-[4px] rounded-full transition-all ${i === active
                       ? "w-[42px] bg-white"
                       : "w-[24px] bg-white/50 hover:bg-white/80"
-                  }`}
+                    }`}
                 />
               ))}
             </div>

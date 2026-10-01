@@ -7,6 +7,7 @@ import tentImg from "@/assets/images/9455ac4be19e4f47438d969b468683ace8220744.pn
 import binocularImg from "@/assets/images/92f96cb1649a6f17905e97c4fba5482de9ddd005.png";
 import vanImg from "@/assets/images/8cc60c92343bb555a3d3168e32a48cc9e77b99be.png";
 import iconContainer2 from "@/assets/icons/Icon Container (2).png";
+import gridBg from "@/assets/images/bg-grid.png";
 import { VectorIcon } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
@@ -45,6 +46,16 @@ export function RulesSection() {
       aria-labelledby="rules-title"
       className="relative overflow-hidden bg-white"
     >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-90 contrast-125"
+        style={{
+          backgroundImage: `url(${gridBg.src})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top 10% center",
+          backgroundSize: "min(1100px, 90vw) auto",
+        }}
+      />u
       {/* Scattered confetti dots */}
       {DOTS.map((pos) => (
         <span key={pos} aria-hidden className={cn("absolute", pos)} />

@@ -13,6 +13,7 @@ import reviewerB from "@/assets/images/Reviewer Image 2.png";
 import reviewerC from "@/assets/images/Reviewer Image-2 3.png";
 import reviewerD from "@/assets/images/Reviewer Image-2 4.png";
 import reviewerE from "@/assets/images/Reviewer Image-3 2.png";
+import gridBg from "@/assets/images/bg-grid.png";
 
 const REVIEWER_IMAGES = [
   reviewerA,
@@ -58,6 +59,16 @@ export function TestimonialsSection() {
   return (
     <section aria-labelledby="testimonials-title" className="relative overflow-hidden">
       <div className="relative mx-auto flex w-[min(90rem,94%)] flex-col items-center py-14 md:py-20">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-40"
+          style={{
+            backgroundImage: `url(${gridBg.src})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "top 10% center",
+            backgroundSize: "750px auto",
+          }}
+        />
         {/* Top badge — Icon Container (6) */}
         <span className="relative grid h-[50px] w-[76px] place-items-center">
           <Image

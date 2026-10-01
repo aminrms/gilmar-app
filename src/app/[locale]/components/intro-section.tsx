@@ -7,12 +7,16 @@ import { Link } from "@/i18n/navigation";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { ArrowCircle } from "@/components/icons";
 
+import gridBg from "@/assets/images/bg-grid.png";
 import introLake from "@/assets/images/58e55ff5a67a21d0944484bf532fd685e430c5dd (1).png";
 import introBridge from "@/assets/images/2639b9a210943894919a84dc31f50eab97d5d762.png";
 import introBridgeTall from "@/assets/images/2639b9a210943894919a84dc31f50eab97d5d762 (1).png";
 import frameTop from "@/assets/images/Frame 889.png";
 import frameBottom from "@/assets/images/Frame 891.png";
 import iconContainer1 from "@/assets/icons/Icon Container (1).png";
+
+const IMAGE_OVERLAY =
+  "/images/967a302692a258f62450110776f94f73713019b0.png";
 
 export function IntroSection() {
   const t = useTranslations("Intro");
@@ -25,6 +29,18 @@ export function IntroSection() {
       className="relative overflow-hidden bg-white"
     >
       <div className="relative mx-auto grid w-[min(90rem,94%)] items-center gap-10 pt-[140px] pb-16 md:pb-24 lg:grid-cols-2 lg:gap-14">
+        {/* Background grid */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-40"
+          style={{
+            backgroundImage: `url(${gridBg.src})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "right 10% center",
+            backgroundSize: "1000px auto",
+          }}
+        />
+
         {/* Content */}
         <div className="flex flex-col items-start">
           <span className="inline-flex items-center gap-[10px] rounded-[799999983616px] px-[30px] py-[14px]">
@@ -45,6 +61,7 @@ export function IntroSection() {
               <span className="text-sm leading-none font-extrabold">
                 {t("cta")}
               </span>
+
               <ArrowCircle dir={dir} label={t("cta")} />
             </Link>
           </GradientButton>
@@ -57,18 +74,22 @@ export function IntroSection() {
             aria-hidden="true"
             className="pointer-events-none absolute -top-4 left-[22%] z-0 h-3 w-3 rotate-12 rounded-[2px] bg-rose-300/80"
           />
+
           <span
             aria-hidden="true"
             className="pointer-events-none absolute top-[14%] left-[16%] z-0 h-2.5 w-2.5 -rotate-12 rounded-[2px] bg-indigo-400/80"
           />
+
           <span
             aria-hidden="true"
             className="pointer-events-none absolute top-[28%] -right-2 z-0 h-3 w-3 rotate-45 rounded-[2px] bg-purple-300/80"
           />
+
           <span
             aria-hidden="true"
             className="pointer-events-none absolute top-[36%] right-8 z-0 h-2 w-2 rotate-12 rounded-[2px] bg-indigo-400/70"
           />
+
           <span
             aria-hidden="true"
             className="pointer-events-none absolute bottom-[18%] left-[42%] z-0 h-2 w-2 rotate-45 rounded-full bg-amber-400/80"
@@ -84,12 +105,25 @@ export function IntroSection() {
                 sizes="(min-width: 1024px) 352px, 60vw"
                 className="object-cover"
               />
+
+              {/* Repeating low-opacity overlay */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 z-10 opacity-20"
+                style={{
+                  backgroundImage: `url(${IMAGE_OVERLAY})`,
+                  backgroundRepeat: "repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "180px auto",
+                }}
+              />
+
               <Image
                 src={introBridgeTall}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 352px, 60vw"
-                className="pointer-events-none object-cover"
+                className="pointer-events-none z-20 object-cover"
               />
             </figure>
 
@@ -101,12 +135,25 @@ export function IntroSection() {
                 fill
                 className="object-cover"
               />
+
+              {/* Repeating low-opacity overlay */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 z-10 opacity-20"
+                style={{
+                  backgroundImage: `url(${IMAGE_OVERLAY})`,
+                  backgroundRepeat: "repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "180px auto",
+                }}
+              />
+
               <Image
                 src={introBridgeTall}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 256px, 45vw"
-                className="pointer-events-none object-cover"
+                className="pointer-events-none z-20 object-cover"
               />
             </figure>
 
@@ -118,6 +165,18 @@ export function IntroSection() {
                 fill
                 sizes="(min-width: 1024px) 256px, 45vw"
                 className="object-cover"
+              />
+
+              {/* Repeating low-opacity overlay */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 z-10 opacity-20"
+                style={{
+                  backgroundImage: `url(${IMAGE_OVERLAY})`,
+                  backgroundRepeat: "repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "180px auto",
+                }}
               />
             </figure>
 

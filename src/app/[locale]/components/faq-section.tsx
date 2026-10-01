@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
-import gridBg from "@/assets/images/bg-grid.png";
 import iconContainer9 from "@/assets/icons/Icon Container (9).png";
 import faqVisual from "@/assets/images/92f96cb1649a6f17905e97c4fba5482de9ddd005 (1).png";
+import gridBg from "@/assets/images/bg-grid.png";
 
 const COUNT = 5;
 
@@ -31,20 +31,34 @@ export function FaqSection() {
   return (
     <section
       aria-labelledby="faq-title"
-      className="relative overflow-hidden"
+      className="relative overflow-hidden mb-[2.5rem]"
       dir={dir}
     >
-      {/* Soft glow wash — feathered so it blends with page, no separator edge */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
+      {/* Soft radial fade glow wash (#C5D8FF) — positioned far bottom-right with deep fade */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+      >
         <div
-          className="absolute right-[-140px] bottom-[-260px] size-[640px] rounded-full bg-glow-blue opacity-20 blur-[420px] [mask-image:radial-gradient(closest-side,black_40%,transparent_100%)]"
-          style={{ backdropFilter: "blur(420px)" }}
+          className="absolute -right-60 -bottom-80 h-[850px] w-[850px] rounded-full blur-[180px] sm:-right-72 sm:-bottom-96 sm:h-[1050px] sm:w-[1050px] sm:blur-[220px]"
+          style={{
+            background:
+              "radial-gradient(circle at 50% 50%, rgba(197, 216, 255, 0.75) 0%, rgba(197, 216, 255, 0.4) 35%, rgba(197, 216, 255, 0.12) 60%, rgba(197, 216, 255, 0) 80%)",
+          }}
         />
       </div>
 
-      {/* Blueprint grid backdrop behind heading — same as rooms/magazine */}
-
-      <div className="relative mx-auto grid w-[min(90rem,94%)] items-start gap-10 py-14 md:py-20 lg:grid-cols-[minmax(0,620px)_minmax(0,620px)] lg:justify-center lg:gap-12">
+      <div className="relative z-10 mx-auto grid w-[min(90rem,94%)] items-start gap-10 py-14 md:py-20 lg:grid-cols-[minmax(0,620px)_minmax(0,620px)] lg:justify-center lg:gap-12">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-90 contrast-125"
+          style={{
+            backgroundImage: `url(${gridBg.src})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "right 10% center",
+            backgroundSize: "min(900px, 90vw) auto",
+          }}
+        />
         {/* ——— Heading + visual side (start in RTL = right) ——— */}
         <div className="flex w-full flex-col items-start text-start">
           {/* Top badge — Icon Container (9) */}
@@ -112,7 +126,7 @@ export function FaqSection() {
                   }
                   className="flex w-full cursor-pointer items-center gap-4"
                 >
-                  <span className="faq-question flex-1 flex items-center justify-start">
+                  <span className="faq-question flex flex-1 items-center justify-start">
                     {t(`items.${i}.question`)}
                   </span>
                   {/* Toggle — teal gradient circle, plus → minus */}
