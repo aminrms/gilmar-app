@@ -28,7 +28,7 @@ export function IntroSection() {
       aria-labelledby="intro-title"
       className="relative overflow-hidden bg-white"
     >
-      <div className="relative mx-auto grid w-[min(90rem,94%)] items-center gap-10 pt-[140px] pb-16 md:pb-24 lg:grid-cols-2 lg:gap-14">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 pt-[140px] pb-16 md:pb-24 lg:grid-cols-2 lg:gap-14">
         {/* Background grid */}
         <div
           aria-hidden
@@ -43,7 +43,7 @@ export function IntroSection() {
 
         {/* Content */}
         <div className="flex flex-col items-start">
-          <span className="inline-flex items-center gap-[10px] rounded-[799999983616px] px-[30px] py-[14px]">
+          <span className="inline-flex items-center gap-[10px] rounded-full px-[30px] py-[14px]">
             <Image src={iconContainer1} alt="" width={84} height={52} />
           </span>
 
@@ -68,7 +68,7 @@ export function IntroSection() {
         </div>
 
         {/* Images */}
-        <div className="relative mx-auto w-full max-w-[601px]">
+        <div className="relative mx-auto w-full max-w-[650px]">
           {/* Floating Decorative Squares */}
           <span
             aria-hidden="true"
