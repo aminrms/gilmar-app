@@ -9,7 +9,7 @@ import { GradientButton } from "@/components/ui/gradient-button";
 import { ArrowCircle } from "@/components/icons";
 import gridBg from "@/assets/images/bg-grid.png";
 import iconContainer2 from "@/assets/icons/Icon Container (2).png";
-import patternMask from "@/assets/patterns/d14f913635d89304d0e9609822aed65631cb5593.png";
+import patternMask from "@/assets/images/patterns/d14f913635d89304d0e9609822aed65631cb5593.png";
 
 // Slides — Figma image d14f913635d89304d0e9609822aed65631cb5593
 // (autumn cabin) is the main slide, followed by the other 3 cabins
