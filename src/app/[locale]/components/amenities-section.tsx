@@ -60,10 +60,10 @@ export function AmenitiesSection() {
       {/* Background blueprint grid */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-40"
+        className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage: `url(${gridBg.src})`,
-          backgroundRepeat: "no-repeat",
+          backgroundRepeat: "repeat",
           backgroundPosition: isRtl ? "right 10% center" : "left 10% center",
           backgroundSize: "1000px auto",
         }}

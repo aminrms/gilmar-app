@@ -32,7 +32,7 @@ export function IntroSection() {
         {/* Background grid */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-40"
+          className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage: `url(${gridBg.src})`,
             backgroundRepeat: "no-repeat",
