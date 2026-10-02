@@ -179,7 +179,7 @@ export function PackagesSection() {
             </figure>
 
             {/* Floating badge card — pinned to the slider's top-left corner */}
-            <div className="absolute top-[5rem] left-[-2rem] z-[2] w-[150px] rounded-2xl bg-white p-3 text-center ring-1 ring-slate-100">
+            <div className="absolute top-[5rem] left-[-2.7rem] z-[2] w-[150px] rounded-2xl bg-white py-3 text-center">
               <p className="text-[11px] leading-5 font-extrabold text-ink">
                 {t("badgeTop")}
               </p>
