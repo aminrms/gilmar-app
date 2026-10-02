@@ -29,7 +29,7 @@ export function RoomsSection() {
         }}
       />
 
-      <div className="relative mx-auto flex w-[min(90rem,94%)] flex-col items-center py-14 md:py-20">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center py-14 md:py-20">
         {/* Top icon — Icon Container (4) */}
         <span className="relative grid h-[50px] w-[76px] place-items-center">
           <Image

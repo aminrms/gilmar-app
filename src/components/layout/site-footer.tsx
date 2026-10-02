@@ -79,7 +79,7 @@ export function SiteFooter() {
 
       <footer
         dir={dir}
-        className="relative z-10 mx-auto max-w-[1430px] w-full pb-6"
+        className="relative z-10 mx-auto max-w-[1280px] w-full pb-6"
       >
         {/* ——— Main card: 1280×276 — map flush full-height, no padding ——— */}
         <div className="overflow-hidden rounded-[20px] border border-[#EEF3F6] bg-[#FCFDFD] shadow-[0px_0px_0px_6px_#FFFFFF]">

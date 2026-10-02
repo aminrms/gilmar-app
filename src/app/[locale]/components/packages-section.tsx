@@ -74,7 +74,7 @@ export function PackagesSection() {
         }}
       />
 
-      <div className="relative mx-auto grid w-[100%] max-w-[1430px] items-center gap-10 py-10 md:py-10 lg:gap-12 xl:h-[815px] xl:grid-cols-[minmax(0,1.35fr)_minmax(0,0.85fr)] xl:gap-16 xl:py-0 2xl:gap-20">
+      <div className="relative mx-auto grid w-[100%] max-w-[1280px] items-center gap-10 py-10 md:py-10 lg:gap-12 xl:h-[815px] xl:grid-cols-[minmax(0,1.35fr)_minmax(0,0.85fr)] xl:gap-16 xl:py-0 2xl:gap-20">
         {/* ——— Text side (start in RTL = right) ——— */}
         <div className="flex flex-col items-start text-start xl:ps-[40px] 2xl:ps-[72px]">
           <span className="inline-flex items-center rounded-full bg-emerald-50 px-4 py-2">

@@ -55,7 +55,7 @@ export function MagazineSection() {
         </p>
 
         {/* Magazine cards */}
-        <div className="relative mt-10 grid w-full grid-cols-1 place-items-center gap-[28px] sm:grid-cols-2 xl:grid-cols-3">
+        <div className="relative mt-10 grid w-full  max-w-7xl grid-cols-1 place-items-center gap-[28px] sm:grid-cols-2 xl:grid-cols-3">
           {[0, 1, 2].map((i) => (
             <article
               key={i}

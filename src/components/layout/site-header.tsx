@@ -25,7 +25,7 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 md:top-10">
-      <div className="relative w-full max-w-[1430px]">
+      <div className="relative w-full max-w-[1280px]">
         <div
           className={cn(
             "flex h-[66px] w-full items-center justify-between gap-4",

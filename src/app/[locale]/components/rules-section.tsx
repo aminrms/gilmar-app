@@ -61,7 +61,7 @@ export function RulesSection() {
         <span key={pos} aria-hidden className={cn("absolute", pos)} />
       ))}
 
-      <div className="relative mx-auto flex w-[min(90rem,94%)] flex-col items-center py-14 md:py-20">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center py-14 md:py-20">
         {/* Top icon — Icon Container (2) 92×60 with teal glyph */}
         <span className="relative grid h-[60px] w-[92px] place-items-center">
           <Image

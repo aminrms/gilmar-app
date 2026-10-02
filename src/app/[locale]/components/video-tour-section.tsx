@@ -23,7 +23,7 @@ export function VideoTourSection() {
       className="relative w-full px-4 sm:px-6 lg:px-[64px]"
     >
       <div
-        className="relative mx-auto w-full max-w-[1400px] overflow-hidden rounded-[20px] lg:h-[700px]"
+        className="relative mx-auto w-full max-w-7xl overflow-hidden rounded-[20px] lg:h-[700px]"
       >
         <div
           aria-hidden
@@ -37,7 +37,7 @@ export function VideoTourSection() {
         />u
         {/* Inner — inherits parent width × 690 */}
         <div
-          className="relative aspect-[1360/690] w-full lg:aspect-auto lg:h-[inherit]"
+          className="relative aspect-[1360/690] w-full  max-w-7xl mx-auto lg:aspect-auto lg:h-[inherit]"
         >
           {/* Base forest photo — full-bleed thumbnail with container radius, no shadow */}
           <figure className="absolute inset-0 overflow-hidden rounded-[20px]">

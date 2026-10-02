@@ -31,7 +31,7 @@ export function HeroSection() {
         <div className="absolute top-[-140px] right-[-140px] size-[640px] rounded-full bg-glow-blue blur-[210px]" />
       </div>
 
-      <div className="relative mx-auto flex w-[min(90rem,94%)] flex-col items-center pt-32 text-center md:pt-44">
+      <div className="relative flex  max-w-7xl mx-auto flex-col items-center pt-32 text-center md:pt-44">
         {/* Title — one line on md+, Abar Mid ExtraBold 40/100%, tracking -2.4 */}
         <h1
           id="hero-title"
