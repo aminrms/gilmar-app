@@ -43,7 +43,7 @@ export function IntroSection() {
 
         {/* Content */}
         <div className="flex flex-col items-start">
-          <span className="inline-flex items-center gap-[10px] rounded-full px-[30px] py-[14px]">
+          <span className="inline-flex items-center gap-[10px] rounded-full ml-1 py-[14px]">
             <Image src={iconContainer1} alt="" width={84} height={52} />
           </span>
 
